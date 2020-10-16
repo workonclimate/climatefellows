@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="icon" type="image/x-icon" href="https://climatefellows.org/favicon.ico">
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Climate Fellows">
+<meta name="twitter:description" content="Join the climate fight on a part-time basis.">
+<meta name="twitter:creator" content="@CassandraXia">
+<meta name="twitter:image" content="https://climatefellows.org/desk.png">
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Climate Fellows">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://climatefellows.org">
+<meta property="og:image" content="https://climatefellows.org/desk.png" />
+<meta property="og:description" content="Join the climate fight on a part-time basis.">
+
+
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Playfair+Display:wght@900&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
+
+
+<title>Climate Fellows</title>
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-173069847-4"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-173069847-4');
+</script>
+
+
+<!-- https://github.com/garand/sticky -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="jquery.sticky.js"></script>
+
+
+
+<style>
+*{
+  color: #010A1B;
+  font-family: 'Rubik', sans-serif;
+}
+
+body{
+  margin: 0px;
+}
+
+h1, h1 *, h2, h2 *{
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+} 
+
+.secret-link{
+  text-decoration: none;
+}
+
+.secret-link:hover{
+  text-decoration: underline;
+}
+
+p{
+  line-height: 180%;
+  color: #010A1B;
+}
+
+.btn{
+  font-weight: bold;
+
+  display: inline-block;
+  background-color: #212A37;
+  color: white;
+  padding: 16px 24px;
+  box-sizing: border-box;
+  margin-top: 16px;
+  margin-right: 16px;
+  cursor: pointer;
+  min-width: 250px;
+  text-align: center;
+}
+
+.btn:hover{
+  background-color: #090B14;
+}
+
+.quote, .quote *{
+  font-family: 'PT Serif', serif;
+  font-size: 1.5em;
+}
+
+
+img{
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.block-h2{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+}
+
+section{
+  display: grid;
+}
+
+.text-section{
+  grid-template-columns: 1fr 1fr; 
+  column-gap: 64px; 
+  padding: 32px 8%;
+}
+
+.about-us-section{
+  grid-template-columns: 150px minmax(280px, 1fr) 1fr; 
+  column-gap: 64px;
+}
+
+.about-us-section p{
+  padding-top: 12px;
+}
+
+.cto-section{
+  grid-template-columns: 1fr 3fr; 
+  background-color: #F6F4F2;
+}
+
+.company-section{
+  grid-template-columns: 3fr 1fr; 
+  background-color: #FAFAFA;
+}
+
+.btn{
+  text-decoration: none;
+}
+
+.faint-label{
+  font-family: 'PT Serif', serif;
+  text-transform: uppercase;
+  font-size: 0.8em;
+  color: #212A37;
+  margin: 16px 0;
+
+}
+
+strong{
+  display: block;
+  font-size: 1em;
+  margin-top: 24px;
+  margin-bottom:0px;
+  letter-spacing: 0.03em;
+}
+
+.header-section{
+  display:grid; 
+  padding: 12px 4%; 
+  font-weight: bold;
+  background-color: #fff;
+}
+
+.nav-links{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+.nav-links a{
+  font-family: 'PT Serif', serif;
+  font-weight: bold;
+  font-size: 14px;
+  text-align: center;
+}
+
+.sticky{
+  width: 100%; /* needed this to prevent .fixed from moving screen */
+  box-sizing: border-box; /* needed this or else width was bigger */
+}
+
+.image-h2{
+  min-height: 100%;
+  object-fit: cover;
+ }
+
+.banner-section{
+  background-color: #FAFAFA; 
+  display: flex; 
+  justify-content: center; 
+  height: 40vh; 
+  padding: 16px;
+}
+
+.banner-h2{
+  align-self: center; 
+  text-align: center;
+}
+
+@media (max-width: 699px){
+  .text-section, .about-us-section, .cto-section, .company-section{
+     grid-template-columns: 1fr;
+  }
+
+  .header-section{
+    grid-template-columns: 200px 1fr; 
+  }
+
+  .nav-links{
+    display: none;
+  }
+
+  .cto-section h2, .company-section h2{
+    min-height: 100px;
+  }
+
+  .about-us-section h2{
+    margin-bottom: 0px
+  }
+
+  .quote{
+    display: none;
+  }
+
+  .block-h2{
+    display: none;
+  }
+
+  .mobile-top-pad{
+    margin-top: 48px;
+  }
+}
+
+@media (min-width: 700px){
+
+  .text-section:not(.about-us-section){
+    column-gap: 20%;
+  }
+
+  .header-section{
+     grid-template-columns: 200px 1fr 200px; 
+  }
+
+  .about-us-section{
+      padding-right: 20%;
+  }
+
+  .block-h2{
+    font-size: 2em;
+  }
+
+  .banner-h2{
+    font-size: 2em;
+  }
+
+}
+
+@media (min-width: 1000px){
+  .about-us-section{
+    grid-template-columns: 200px 1fr; 
+    column-gap: 128px;
+  }
+
+  .block-h2{
+    font-size: 3em;
+  }
+
+  .banner-h2{
+    font-size: 2.2em;
+  }
+
+  .block-h2 div{
+    margin: 32px;
+  }
+
+}
+
+
+
+</style>
+
+</head>
+
+<body>
+
+<section class="header-section sticky">
+  
+  <h1>
+    Climate Fellows
+  </h1>
+
+  <a href="https://workonclimate.org" class="secret-link" style="align-self: center; font-weight:300; position:relative; top:2px">by Work on Climate</a>
+
+
+ <div class="nav-links">
+    <a class="secret-link" href="https://forms.gle/TW93cS48tvi1wnvm9">Apply</a>
+    <a class="secret-link" href="https://forms.gle/ZJZigKPPoq7ntkzu9">Hire</a>
+    <a class="nav-link secret-link" href="#faq">FAQ</a>
+  </div>
+
+</section>
+
+<section class="banner-section">
+  <h2 class="banner-h2">Join the climate fight on a part-time basis.</h2>
+</section>
+
+
+<!--<section style="background-color: #262A30; display: flex; justify-content: center; height: 15vh;">
+  <h2 style="align-self: center; color: white; ">Calling all programmers, designers, scientists, and engineers...</h2>
+</section>
+-->
+
+<section class="cto-section">
+
+  <h2 class="block-h2">
+    <a class="secret-link" href="https://forms.gle/TW93cS48tvi1wnvm9">
+      <div>Use your skills<br>in the climate battle.</div>
+    </a>
+  </h2>
+
+  <img src="desk.png" class="image-h2">
+
+</section>
+
+<!-- todo: shrink the images -->
+
+<section id="be-a-cto" class="text-section" style="background-color: #FAFAFA">
+
+<div>
+<div class="faint-label">For individuals</div>
+<h2>Apply to be a fellow</h2>
+</div>
+
+
+<div></div>
+
+<div>
+
+<p>
+Do you wonder if you’re working on meaningful problems? Ready to use your skills to save the planet?  We are running out of time to reach net zero carbon emissions and you can help!
+</p>
+
+<p>
+Volunteer at a climate nonprofit, or get paid to do short term contract work with a climate startup. See if you find the answers you are looking for.
+</p>
+
+<a class="btn" href="https://forms.gle/TW93cS48tvi1wnvm9">Become a fellow</a>
+</div>
+
+
+<p class="quote">
+ “This is a low risk way for me to see how my existing skills could fit in for addressing  the climate crisis.” 
+ <br>— senior Google engineer
+</p>
+
+</section>
+
+
+<section class="company-section">
+
+  <img src="landscape.png" class="image-h2">
+
+  <h2 class="block-h2">
+    <a class="secret-link" href="https://forms.gle/TW93cS48tvi1wnvm9">
+      <div>You're working for the planet, so hire the best.</div>
+    </a>
+  </h2>
+
+</section>
+
+
+
+
+<section id="hire-a-cto" class="text-section" style="background-color: #FAFAFA">
+
+<div>
+<div class="faint-label">For organizations</div>
+<h2>Work with fellows</h2>
+</div>
+
+<div></div>
+
+<div>
+<p>
+We want to empower all climate nonprofits and startups to succeed by giving them access to the highest quality talent.
+</p>
+
+<p>
+Much of this talent is not actively on the job market. They are climate concerned professionals with existing jobs unsure of how to help. Start with part time contract work, get to know the person, and you may end up finding someone amazing for a fulltime role. 
+</p>
+
+<a class="btn" href="https://forms.gle/ZJZigKPPoq7ntkzu9">Apply as an organization</a>
+</div>
+
+
+<p class="quote">
+ “I have 10+ years of experience in supply chains and manufacturing, but I am looking for a CTO. ” 
+                  <br>— early  climate founder
+</p>
+</section>
+
+
+
+
+<section id="faq" class="text-section" style="background-color: #F6F4F2">
+
+<h2>FAQ</h2>
+<div></div>
+
+<div>
+<div class="faint-label">For individuals</div>
+<strong>What does it mean to be a Climate Fellow?</strong>
+<p>Climate Fellows are professionals who want to use their skills to help climate nonprofits and startups succeed. Our minimum commitment is 10 hours/week, and you get to see what it’s like to work on climate without leaving your existing job. Paid and volunteer opportunities both available. 
+</p>
+
+<p>Fill in <a href="https://forms.gle/TW93cS48tvi1wnvm9">our form</a> describing your skills and desires, and we will email you as relevant part-time opportunities arise.
+</p>
+
+<strong>What can I do while I wait to be matched?</strong>
+<p>Get started taking action today by finding people and resources with others in the <a href="https://workonclimate.org">Work on Climate</a> community.
+</p>
+
+<a class="btn" href="https://forms.gle/TW93cS48tvi1wnvm9">Become a Fellow</a>
+</div> <!-- end lhs -->
+
+
+<div>
+<div class="faint-label mobile-top-pad">For organizations</div>
+
+<strong>Why should I work with Climate Fellows?</strong>
+
+<p>Climate Fellows are pre-vetted and often off-the-market professional talent. Work with someone incredible and help them get their bearings in the climate space. To be considered, please fill out <a href="https://forms.gle/ZJZigKPPoq7ntkzu9">our form</a> here.
+</p>
+
+<strong>Is this free?</strong>
+<p>
+Yes! Matchmaking is free because you are working for the planet and we want you to succeed.
+</p>
+
+<p>
+Climate nonprofits can post volunteer positions. Climate startups must compensate individual Fellows due to labor law.
+</p>
+<a class="btn" href="https://forms.gle/ZJZigKPPoq7ntkzu9">Apply as an organization</a>
+</div> <!-- end rhs -->
+
+</section>
+
+
+<!--<section class="text-section about-us-section" style="background-color: #1a2028;">
+
+<h2>
+Part time consultancy
+</h2>
+
+<div>
+<p>
+Not ready to be a CTO, but looking to try part time work in climate and seeing if it is right for you? <a href="https://climatecabal.com">Climate Cabal</a> matchmakes top notch programmers, designers, machine learning practitioners, and scientists in Silicon Valley with climate organizations looking for part timers. 
+</p>
+
+<a class="btn" href="https://climatecabal.com">I want to be a consultant</a>
+
+</div>
+</section> -->
+
+
+<section class="text-section about-us-section" style="background-color: #D8D8D8;">
+
+<h2>
+About Us
+</h2>
+
+
+<div>
+<!--<p>
+We are two ex-Google AI software engineers with 5 and 8 years at the company. We left in July 2020 to start meaningful ventures to address climate change. 
+</p>-->
+
+<p>
+The Climate Fellows and <a href="https://climatecto.com">Climate CTO</a> matchmaking programs are part of the <a href="https://workonclimate.org">Work on Climate</a> collective to get more people doing meaningful work in the climate space.  
+</p>
+
+<p>
+The Climate Fellows program is run by <a href="https://cassandraxia.com">Cassandra Xia</a>, <a href="https://www.linkedin.com/in/eugenekirpichov/">Eugene Kirpichov</a>, and <a href="https://www.linkedin.com/in/richardikim/">Richard Kim</a>. Our backgrounds span software engineering, machine learning, data infrastructure, law, and product management. 
+</p>
+
+</div>
+
+<div></div>
+</section>
+
+
+</body>
+
+
+<script>
+
+  $(document).ready(function(){
+    $(".sticky").sticky({topSpacing:0});
+  });
+
+  $('.nav-link').each(function(){
+    const hash = this.hash; // #be-a-cto'
+    $(this).click(function(e){
+      $('html, body').animate({scrollTop: $(hash).offset().top -80 }, 'slow');
+      e.preventDefault(); // doesn't seem necessary
+    });
+  });
+
+</script>

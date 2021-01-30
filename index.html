@@ -119,6 +119,7 @@ section{
   padding: 32px 8%;
 }
 
+
 .about-us-section{
   grid-template-columns: 150px minmax(280px, 1fr) 1fr; 
   column-gap: 64px;
@@ -129,7 +130,7 @@ section{
 }
 
 .cto-section{
-  grid-template-columns: 1fr 3fr; 
+  grid-template-columns: 1.2fr 2fr; 
   background-color: #F6F4F2;
 }
 
@@ -143,7 +144,6 @@ section{
 }
 
 .faint-label{
-  font-family: 'PT Serif', serif;
   text-transform: uppercase;
   font-size: 0.8em;
   color: #212A37;
@@ -168,7 +168,7 @@ strong{
 
 .nav-links{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-flow: column;
   align-items: center;
 }
 .nav-links a{
@@ -184,16 +184,16 @@ strong{
 }
 
 .image-h2{
-  min-height: 100%;
-  object-fit: cover;
+  height: 100%;
+  max-height: 300px;
+  width: 100%;
  }
 
 .banner-section{
   background-color: #212A37; /*#010A1B; #212A37; */
   display: flex; 
   justify-content: center; 
-  height: 10vh; 
-  padding: 16px;
+  padding: 20px;
 }
 
 .banner-h2{
@@ -202,6 +202,12 @@ strong{
   color: white;
   font-size: 1.5em;
 }
+
+.logo{
+  max-height: 100px;
+  max-width: 150px;
+}
+
 
 @media (max-width: 699px){
   .text-section, .about-us-section, .cto-section, .company-section{
@@ -244,7 +250,7 @@ strong{
   }
 
   .header-section{
-     grid-template-columns: 200px 1fr 200px; 
+     grid-template-columns: 200px 1fr 300px; 
   }
 
   .about-us-section{
@@ -252,7 +258,7 @@ strong{
   }
 
   .block-h2{
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
 }
@@ -264,11 +270,11 @@ strong{
   }
 
   .block-h2{
-    font-size: 3em;
+    font-size: 2em;
   }
 
   .block-h2 div{
-    margin: 32px;
+    margin: 24px;
   }
 
 }
@@ -291,29 +297,86 @@ strong{
 
 
  <div class="nav-links">
-    <a class="secret-link" href="https://forms.gle/TW93cS48tvi1wnvm9">Apply</a>
-    <a class="secret-link" href="https://forms.gle/ZJZigKPPoq7ntkzu9">Hire</a>
+    <a class="secret-link" href="https://forms.gle/TW93cS48tvi1wnvm9">For individuals</a>
+    <a class="secret-link" href="https://forms.gle/ZJZigKPPoq7ntkzu9">For organizations</a>
     <a class="nav-link secret-link" href="#faq">FAQ</a>
   </div>
 
 </section>
 
-<section class="banner-section">
-  <h2 class="banner-h2">Join the climate fight on a part-time basis.</h2>
+<section class="banner-section" style="background-color: #494971">
+  <h2 class="banner-h2">Climate organizations, find professional volunteers and contractors.</h2>
 </section>
 
+
+<section class="company-section">
+
+  <img src="landscape-wide.png" class="image-h2">
+
+  <h2 class="block-h2">
+    <div>You're working for the planet, and we want to help.</div>
+  </h2>
+
+</section>
+
+
+
+<section class="text-section" style="background-color: #FAFAFA">
+
+<div>
+<div class="faint-label">For organizations</div>
+<h2>Work with fellows</h2>
+</div>
+
+<div></div>
+
+<div>
+<p>
+We want to empower all climate nonprofits and startups to succeed by giving them access to the highest quality talent.
+</p>
+
+<p>
+Much of this talent is not actively on the job market. They are climate concerned professionals with existing jobs unsure of how to help. Start with part time contract work, get to know the person, and you may end up finding someone amazing for a fulltime role. 
+</p>
+
+<a class="btn" href="https://forms.gle/ZJZigKPPoq7ntkzu9">Apply as an organization</a>
+</div>
+
+
+<p class="quote">
+ “This is a low risk way for me to see how my existing skills could fit in for addressing  the climate crisis.” 
+ <br>— senior Google engineer
+</p>
+
+</section>
+
+<section class="text-section" style="grid-template-columns: 1fr">
+  <h2>With projects from</h2>
+  <div style="display: grid; grid-auto-flow: column; align-items: center">
+  <img class="logo" src="wwf.png">
+  <img class="logo" src="climate-neutral.png">
+  <img class="logo" src="reflective-earth.png">
+  <img class="logo" src="nature-conservancy.png">
+  <img class="logo" src="world.png">
+  <img class="logo" src="climate-cabinet.png">
+
+  </div>
+</section>
 
 <!--<section style="background-color: #262A30; display: flex; justify-content: center; height: 15vh;">
   <h2 style="align-self: center; color: white; ">Calling all programmers, designers, scientists, and engineers...</h2>
 </section>
 -->
 
+<section class="banner-section">
+  <h2 class="banner-h2">Professionals, are you ready to commit 10 hrs/week to the climate fight?</h2>
+</section>
+
+
 <section class="cto-section">
 
   <h2 class="block-h2">
-    <a class="secret-link" href="https://forms.gle/TW93cS48tvi1wnvm9">
-      <div>Use your skills<br>in the climate battle.</div>
-    </a>
+    <div>Join meaningful and challenging projects.</div>
   </h2>
 
   <img src="desk.png" class="image-h2">
@@ -322,7 +385,7 @@ strong{
 
 <!-- todo: shrink the images -->
 
-<section id="be-a-cto" class="text-section" style="background-color: #FAFAFA">
+<section class="text-section" style="background-color: #FAFAFA">
 
 <div>
 <div class="faint-label">For individuals</div>
@@ -354,48 +417,7 @@ Volunteer at a climate nonprofit, or get paid to do part-time contract work with
 </section>
 
 
-<section class="company-section">
 
-  <img src="landscape.png" class="image-h2">
-
-  <h2 class="block-h2">
-    <a class="secret-link" href="https://forms.gle/ZJZigKPPoq7ntkzu9">
-      <div>You're working for the planet, so hire the best.</div>
-    </a>
-  </h2>
-
-</section>
-
-
-
-
-<section id="hire-a-cto" class="text-section" style="background-color: #FAFAFA">
-
-<div>
-<div class="faint-label">For organizations</div>
-<h2>Work with fellows</h2>
-</div>
-
-<div></div>
-
-<div>
-<p>
-We want to empower all climate nonprofits and startups to succeed by giving them access to the highest quality talent.
-</p>
-
-<p>
-Much of this talent is not actively on the job market. They are climate concerned professionals with existing jobs unsure of how to help. Start with part time contract work, get to know the person, and you may end up finding someone amazing for a fulltime role. 
-</p>
-
-<a class="btn" href="https://forms.gle/ZJZigKPPoq7ntkzu9">Apply as an organization</a>
-</div>
-
-
-<p class="quote">
- “I have 10+ years of experience in supply chains and manufacturing, but I am looking for a CTO. ” 
-                  <br>— early  climate founder
-</p>
-</section>
 
 
 

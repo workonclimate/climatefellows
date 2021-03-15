@@ -28,7 +28,6 @@
 
 <title>Climate Fellows</title>
 
-
 <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-173069847-4"></script>
 <script>
@@ -43,7 +42,9 @@
 <!-- https://github.com/garand/sticky -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="jquery.sticky.js"></script>
-
+<script src="lodash.min.js"></script>
+<script src="airtable.browser.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 
 
 <style>
@@ -153,6 +154,16 @@ section{
 
 }
 
+.fellow-profile{
+  font-size: 12px;
+  margin: 16px 0;
+}
+
+.fellow-profile .faint-label{
+  margin: 8px 0;
+  color: #999;
+}
+
 strong{
   display: block;
   font-size: 1em;
@@ -253,6 +264,11 @@ strong{
   .mobile-top-pad{
     margin-top: 48px;
   }
+
+  .fellow-profiles{
+    width: 200px;
+    margin: 0 auto;
+  }
 }
 
 @media (min-width: 700px){
@@ -309,12 +325,14 @@ strong{
 
 
  <div class="nav-links">
-    <a class="secret-link" href="https://forms.gle/TW93cS48tvi1wnvm9">For individuals</a>
+    <a class="secret-link" href="#our-fellows">Our fellows</a>
+<!--    <a class="secret-link" href="https://forms.gle/TW93cS48tvi1wnvm9">For individuals</a> -->
     <a class="secret-link" href="https://forms.gle/ZJZigKPPoq7ntkzu9">For organizations</a>
     <a class="nav-link secret-link" href="#faq">FAQ</a>
   </div>
 
 </section>
+
 
 <section class="banner-section" style="background-color: #494971">
   <h2 class="banner-h2">Climate organizations, find professional volunteers and contractors.</h2>
@@ -510,6 +528,17 @@ Not ready to be a CTO, but looking to try part time work in climate and seeing i
 </div>
 </section> -->
 
+<h2 id="our-fellows" class="text-section">Our Fellows</h2>  
+<div class="fellow-profiles" id="app" style="display:grid; grid-template-columns: repeat(auto-fill, 200px); grid-column-gap: 40px; grid-row-gap: 16px; max-width:1200px; margin: 0 auto">
+<fellow-profile v-for="profile in fellowProfiles"
+:key="profile.name"
+:name="profile.name"
+:linked-in="profile.linkedIn"
+:skills-offered="profile.skillsOffered"
+:orgs-of-interest="profile.orgsOfInterest"
+:profile-image="profile.profileImage"
+:availability="profile.availability"></fellow-profile>
+</div>
 
 <section class="text-section about-us-section" style="background-color: #D8D8D8;">
 
@@ -539,6 +568,30 @@ If you believe in our mission and would like to contribute or partner with us as
 
 </body>
 
+<script type="text/javascript" src="https://unpkg.com/vue"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.min.js"></script>
+
+<script type="text/x-template" id="fellow-profile-template">
+<div class="fellow-profile" style="max-width:200px">
+
+<img v-if="profileImage" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 8px" :src="profileImage">
+
+<div style="font-weight: bold; font-size: 1.2em">{{name}}</div>
+<a v-if="linkedIn" :href="linkedIn">LinkedIn</a> · 
+<a :href="bookingLink">Request booking</a>
+
+<div class="faint-label">Available for</div>
+<div>{{availability}}</div>
+
+<div class="faint-label">Skills offered</div>
+<div>{{skillsOffered}}</div>
+
+<div class="faint-label">Orgs you want to help</div>
+<div>{{orgsOfInterest}}</div>
+
+</div>
+</script>
+
 
 <script>
 
@@ -554,4 +607,85 @@ If you believe in our mission and would like to contribute or partner with us as
     });
   });
 
+
+Vue.component('fellow-profile', {
+  props: {
+    name: {type: String},
+    linkedIn: {type:String},
+    skillsOffered: {type:String},
+    orgsOfInterest: {type: String},
+    profileImage: {type:String},
+    availability: {type: String}
+  },
+  computed: {
+    bookingLink(){
+      return 'https://docs.google.com/forms/d/e/1FAIpQLSd-trWGrqTPhTCW5Mslk4G7M2Om2lCnp8DUfX2GpEjylyRQzA/viewform?entry.966322401=' + this.name.replaceAll(' ', '+');
+    }
+  },
+  template: '#fellow-profile-template',
+});
+
+
+// create a new tab called "one hour consults"?
+
+
+new Vue({
+  el: '#app',
+  data: {
+    fellowProfiles: []
+  },
+  mounted(){
+
+    const this_ = this;
+
+    // Hit airtable for fellow profiles
+    const apiKey = 'keyalRxirLVmrHvI7'; // cssndry
+    var Airtable = require('airtable');
+    var base = new Airtable({apiKey: apiKey}).base('appRUOqDj0CONvWr3');
+
+    const fellowProfiles = [];
+    base('Fellow Profiles').select({
+        // Selecting the first 3 records in Grid view:
+        view: "Grid view"
+    }).eachPage(function page(records, fetchNextPage) {
+        // This function (`page`) will get called for each page of records.
+
+        console.log('records: ' + records.length);
+        records.forEach(function(record) {
+          console.log('here');
+          var headshot = record.get('Headshot');
+          if (headshot){
+            headshot = headshot[0].url;
+          }
+
+          var helpOffered = record.get('Help offered');
+          if (helpOffered){
+            helpOffered = helpOffered.join(', ');
+          }
+
+          if (record && record.get('Name')){
+            fellowProfiles.push({
+              name: record.get('Name'),
+              linkedIn : record.get('LinkedIn'),
+              skillsOffered: record.get('Skills offered'),
+              orgsOfInterest: record.get('Types of organizations you want to help'),
+              profileImage: headshot,
+              availability: helpOffered
+            });
+          }
+
+        });
+
+        // To fetch the next page of records, call `fetchNextPage`.
+        // If there are more records, `page` will get called again.
+        // If there are no more records, `done` will get called.
+        fetchNextPage();
+
+    }, function done(err) {
+        if (err) { console.error(err); return; }
+        // this_.fellowProfiles = _.shuffle(fellowProfiles); //_.orderBy(, ['profileImage'], ['asc']);
+        this_.fellowProfiles = _.orderBy(fellowProfiles, x => x.skillsOffered.length, ['asc'])
+    });
+  }
+});
 </script>

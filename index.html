@@ -533,6 +533,7 @@ Not ready to be a CTO, but looking to try part time work in climate and seeing i
 <fellow-profile v-for="profile in fellowProfiles"
 :key="profile.name"
 :name="profile.name"
+:calendly="profile.calendly"
 :linked-in="profile.linkedIn"
 :skills-offered="profile.skillsOffered"
 :orgs-of-interest="profile.orgsOfInterest"
@@ -577,8 +578,8 @@ If you believe in our mission and would like to contribute or partner with us as
 <img v-if="profileImage" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; margin-bottom: 8px" :src="profileImage">
 
 <div style="font-weight: bold; font-size: 1.2em">{{name}}</div>
-<a v-if="linkedIn" :href="linkedIn">LinkedIn</a> · 
-<a :href="bookingLink">Request booking</a>
+<a v-if="linkedIn" :href="linkedIn">LinkedIn</a> <span  v-if="calendly"> · 
+<a :href="bookingLink">Request booking</a></span>
 
 <div class="faint-label">Available for</div>
 <div>{{availability}}</div>
@@ -611,6 +612,7 @@ If you believe in our mission and would like to contribute or partner with us as
 Vue.component('fellow-profile', {
   props: {
     name: {type: String},
+    calendly: {type:String},
     linkedIn: {type:String},
     skillsOffered: {type:String},
     orgsOfInterest: {type: String},
@@ -666,6 +668,7 @@ new Vue({
           if (record && record.get('Name')){
             fellowProfiles.push({
               name: record.get('Name'),
+              calendly: record.get('Calendly'),
               linkedIn : record.get('LinkedIn'),
               skillsOffered: record.get('Skills offered'),
               orgsOfInterest: record.get('Types of organizations you want to help'),

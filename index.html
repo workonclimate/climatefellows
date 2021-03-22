@@ -25,6 +25,12 @@
 
 <link href="https://fonts.googleapis.com/css2?family=PT+Serif:wght@400;700&family=Playfair+Display:wght@900&family=Rubik:wght@400;700&display=swap" rel="stylesheet">
 
+<!-- Vuetify -->
+<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vuetify@2.4.7/dist/vuetify.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+
 
 <title>Climate Fellows</title>
 
@@ -38,13 +44,6 @@
   gtag('config', 'UA-173069847-4');
 </script>
 
-
-<!-- https://github.com/garand/sticky -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="jquery.sticky.js"></script>
-<script src="lodash.min.js"></script>
-<script src="airtable.browser.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
 
 
 <style>
@@ -529,16 +528,25 @@ Not ready to be a CTO, but looking to try part time work in climate and seeing i
 </section> -->
 
 <h2 id="our-fellows" class="text-section">Our Fellows</h2>  
-<div class="fellow-profiles" id="app" style="display:grid; grid-template-columns: repeat(auto-fill, 200px); grid-column-gap: 40px; grid-row-gap: 16px; max-width:1200px; margin: 0 auto">
-<fellow-profile v-for="profile in fellowProfiles"
-:key="profile.name"
-:name="profile.name"
-:calendly="profile.calendly"
-:linked-in="profile.linkedIn"
-:skills-offered="profile.skillsOffered"
-:orgs-of-interest="profile.orgsOfInterest"
-:profile-image="profile.profileImage"
-:availability="profile.availability"></fellow-profile>
+<div id="app">
+  <v-app>
+    <v-main>
+      <v-container>
+        <v-text-field label="Search" append-icon="mdi-magnify" v-model="searchSubstring"></v-text-field>
+        <div class="fellow-profiles" style="display:grid; grid-template-columns: repeat(auto-fill, 200px); grid-column-gap: 40px; grid-row-gap: 16px; max-width:1200px; margin: 0 auto">
+          <fellow-profile v-for="profile in filteredProfiles"
+          :key="profile.name"
+          :name="profile.name"
+          :calendly="profile.calendly"
+          :linked-in="profile.linkedIn"
+          :skills-offered="profile.skillsOffered"
+          :orgs-of-interest="profile.orgsOfInterest"
+          :profile-image="profile.profileImage"
+          :availability="profile.availability"></fellow-profile>
+        </div>
+      </v-container>
+    </v-main>
+  </v-app>
 </div>
 
 <section class="text-section about-us-section" style="background-color: #D8D8D8;">
@@ -594,19 +602,28 @@ If you believe in our mission and would like to contribute or partner with us as
 </script>
 
 
+
+<!-- https://github.com/garand/sticky -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="jquery.sticky.js"></script>
+<script src="lodash.min.js"></script>
+<script src="airtable.browser.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+<script src="https://cdn.jsdelivr.net/npm/vuetify@2.4.7/dist/vuetify.js"></script>
+
 <script>
 
-  $(document).ready(function(){
-    $(".sticky").sticky({topSpacing:0});
-  });
+$(document).ready(function(){
+  $(".sticky").sticky({topSpacing:0});
+});
 
-  $('.nav-link').each(function(){
-    const hash = this.hash; // #be-a-cto'
-    $(this).click(function(e){
-      $('html, body').animate({scrollTop: $(hash).offset().top -80 }, 'slow');
-      e.preventDefault(); // doesn't seem necessary
-    });
+$('.nav-link').each(function(){
+  const hash = this.hash; // #be-a-cto'
+  $(this).click(function(e){
+    $('html, body').animate({scrollTop: $(hash).offset().top -80 }, 'slow');
+    e.preventDefault(); // doesn't seem necessary
   });
+});
 
 
 Vue.component('fellow-profile', {
@@ -633,8 +650,19 @@ Vue.component('fellow-profile', {
 
 new Vue({
   el: '#app',
+  vuetify: new Vuetify(),
   data: {
-    fellowProfiles: []
+    fellowProfiles: [],
+    searchSubstring: "",
+  },
+  computed: {
+    filteredProfiles() {
+      query = this.searchSubstring.toLowerCase();
+      return _.filter(this.fellowProfiles, function(fellow) {
+        const fullText = [fellow.name, fellow.skillsOffered, fellow.orgsOfInterest, fellow.availability].join(";");
+        return fullText.toLowerCase().includes(query);
+      });
+    }
   },
   mounted(){
 

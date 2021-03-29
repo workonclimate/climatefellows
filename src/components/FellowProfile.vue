@@ -20,7 +20,7 @@
     <div>{{ availability }}</div>
 
     <div class="faint-label">Skills offered</div>
-    <div>{{ skillsOffered }}</div>
+    <div style="white-space: pre-line">{{ skillsOffered }}</div>
 
     <div class="faint-label">Orgs you want to help</div>
     <div>{{ orgsOfInterest }}</div>

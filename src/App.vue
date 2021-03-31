@@ -148,7 +148,7 @@
 
         <div>
           <p>
-            Are you ready to commit 10+ hours/week to working on a climate? Join
+            Are you ready to commit 10+ hours/week to working on climate? Join
             a like-minded cohort in volunteering at a climate nonprofit, or
             doing paid contract work with a climate startup.
           </p>

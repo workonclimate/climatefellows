@@ -32,7 +32,7 @@
           >Our fellows</a
         >
         <!--    <a class="secret-link" href="https://forms.gle/TW93cS48tvi1wnvm9">For individuals</a> -->
-        <a class="secret-link" href="https://forms.gle/ZJZigKPPoq7ntkzu9"
+        <a class="secret-link" href="https://airtable.com/shrFJjCxH4sBK6lha"
           >For organizations</a
         >
         <a
@@ -72,19 +72,23 @@
 
         <div>
           <p>
-            We want to empower all climate organizations to succeed by giving
-            them access to the highest quality volunteer and contract talent.
+            We want to empower all climate organizations to succeed by providing access to the highest quality talent pool for short-term work.
           </p>
 
           <p>
             Climate Fellows draws from workonclimate.org’s 1000+ strong
             community. Fellows are professionals who have committed 10+
-            hours/week to working with climate nonprofits and for-profits
-            welcome to apply.
+            hours/week to working with climate nonprofits and for-profits. 
           </p>
 
-          <a class="btn" href="https://forms.gle/ZJZigKPPoq7ntkzu9"
-            >Apply as an organization</a
+          <p>Nonprofits can offer volunteer or paid projects. For-profits must offer paid projects by labor law.
+          </p>
+
+          <p>
+          </p>
+
+          <a class="btn" href="https://airtable.com/shrFJjCxH4sBK6lha"
+            >Pitch a project</a
           >
         </div>
 
@@ -253,7 +257,7 @@
             </li>
           </ul>
           <p>
-            For nonprofit organizations, our Fellows work with you for free -
+            For nonprofit organizations, our Fellows can work with you for free —
             startups and other for-profit organizations can work with our
             Fellows on a paid contract.
           </p>
@@ -276,12 +280,12 @@
           <p>
             If you’re looking for a specific background, reach out to us
             directly by filling out
-            <a href="https://forms.gle/ZJZigKPPoq7ntkzu9">this form</a>! Our
+            <a href="https://airtable.com/shrFJjCxH4sBK6lha">this form</a>! Our
             program is constantly growing and we are welcoming new Fellows with
             unique backgrounds on a regular basis
           </p>
 
-          <!-- <a class="btn" href="https://forms.gle/ZJZigKPPoq7ntkzu9">Apply as an organization</a>
+          <!-- <a class="btn" href="https://airtable.com/shrFJjCxH4sBK6lha">Apply as an organization</a>
  -->
         </div>
         <!-- end rhs -->
@@ -372,10 +376,9 @@ We are two ex-Google AI software engineers with 5 and 8 years at the company. We
             Fellows program is a completely pro-bono volunteer effort run by
             <a href="https://www.linkedin.com/in/nivedithaobla/"
               >Niveditha Obla</a
-            >, <a href="https://cassandraxia.com">Cassandra Xia</a>, and
+            >, <a href="https://cassandraxia.com">Cassandra Xia</a>,
             <a href="https://www.linkedin.com/in/jeremiah-brewer-595042b2/"
-              >Jeremy Brewer</a
-            >.
+              >Jeremy Brewer</a>, <a href="https://www.linkedin.com/in/eugenekirpichov/">Eugene Kirpichov</a>, and <a href="https://www.linkedin.com/in/richardikim/">Richard Kim</a>.
           </p>
         </div>
 

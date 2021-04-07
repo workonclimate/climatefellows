@@ -152,9 +152,9 @@
 
         <div>
           <p>
-            Are you ready to commit 10+ hours/week to working on climate? Join
-            a like-minded cohort in volunteering at a climate nonprofit, or
-            doing paid contract work with a climate startup.
+            Are you ready to commit 10+ hours/week to working on climate? Join a
+            like-minded cohort in volunteering at a climate nonprofit, or doing
+            paid contract work with a climate startup.
           </p>
 
           <p>
@@ -340,13 +340,7 @@ Not ready to be a CTO, but looking to try part time work in climate and seeing i
           <FellowProfile
             v-for="profile in filteredProfiles"
             :key="profile.name"
-            :name="profile.name"
-            :calendly="profile.calendly"
-            :linked-in="profile.linkedIn"
-            :skills-offered="profile.skillsOffered"
-            :orgs-of-interest="profile.orgsOfInterest"
-            :profile-image="profile.profileImage"
-            :availability="profile.availability"
+            :fellow="profile"
           ></FellowProfile>
         </div>
       </v-container>
@@ -395,17 +389,7 @@ import _ from "lodash";
 import Airtable from "airtable";
 import $ from "jquery";
 
-import FellowProfile from "@/components/FellowProfile.vue";
-
-interface Fellow {
-  name: string;
-  skillsOffered: string;
-  orgsOfInterest: string;
-  availability: string;
-  calendly: string;
-  linkedIn: string;
-  profileImage: string;
-}
+import FellowProfile, { Fellow } from "@/components/FellowProfile.vue";
 
 @Component({ name: "App", components: { FellowProfile } })
 export default class App extends Vue {

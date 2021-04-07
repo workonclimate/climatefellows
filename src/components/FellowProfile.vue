@@ -1,7 +1,7 @@
 <template>
   <div class="fellow-profile" style="max-width: 200px">
     <img
-      v-if="profileImage"
+      v-if="fellow.profileImage"
       style="
         width: 200px;
         height: 200px;
@@ -9,47 +9,52 @@
         object-fit: cover;
         margin-bottom: 8px;
       "
-      :src="profileImage"
+      :src="fellow.profileImage"
     />
 
-    <div style="font-weight: bold; font-size: 1.2em">{{ name }}</div>
-    <a v-if="linkedIn" :href="linkedIn">LinkedIn</a>
-    <span v-if="calendly"> · <a :href="bookingLink">Request booking</a></span>
+    <div style="font-weight: bold; font-size: 1.2em">{{ fellow.name }}</div>
+    <a v-if="fellow.linkedIn" :href="fellow.linkedIn">LinkedIn</a>
+    <span v-if="fellow.calendly"> · <a :href="bookingLink">Request booking</a></span>
 
     <div class="faint-label">Available for</div>
-    <div>{{ availability }}</div>
+    <div>{{ fellow.availability }}</div>
 
     <div class="faint-label">Skills offered</div>
-    <div style="white-space: pre-line">{{ skillsOffered }}</div>
+    <div style="white-space: pre-line">{{ fellow.skillsOffered }}</div>
 
     <div class="faint-label">Orgs you want to help</div>
-    <div>{{ orgsOfInterest }}</div>
+    <div>{{ fellow.orgsOfInterest }}</div>
   </div>
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import { Component, Prop, Vue } from 'vue-property-decorator'
 
-export default Vue.extend({
-  name: "FellowProfile",
-  props: {
-    name: { type: String },
-    calendly: { type: String },
-    linkedIn: { type: String },
-    skillsOffered: { type: String },
-    orgsOfInterest: { type: String },
-    profileImage: { type: String },
-    availability: { type: String },
-  },
-  computed: {
-    bookingLink() {
-      return (
-        "https://docs.google.com/forms/d/e/1FAIpQLSd-trWGrqTPhTCW5Mslk4G7M2Om2lCnp8DUfX2GpEjylyRQzA/viewform?entry.966322401=" +
-        this.name.replaceAll(" ", "+")
-      );
-    },
-  },
-});
+interface Fellow {
+  name: string;
+  skillsOffered: string;
+  orgsOfInterest: string;
+  availability: string;
+  calendly: string;
+  linkedIn: string;
+  profileImage: string;
+}
+
+@Component({ name: "FellowProfile" })
+class FellowProfile extends Vue {
+  @Prop()
+  fellow!: Fellow;
+
+  get bookingLink(): string {
+    return (
+      "https://docs.google.com/forms/d/e/1FAIpQLSd-trWGrqTPhTCW5Mslk4G7M2Om2lCnp8DUfX2GpEjylyRQzA/viewform?entry.966322401=" +
+      this.fellow.name.replaceAll(" ", "+")
+    );
+  }
+}
+
+export { Fellow };
+export default FellowProfile;
 </script>
 
 <style>

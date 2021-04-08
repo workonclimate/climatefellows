@@ -72,20 +72,22 @@
 
         <div>
           <p>
-            We want to empower all climate organizations to succeed by providing access to the highest quality talent pool for short-term work.
+            We want to empower all climate organizations to succeed by providing
+            access to the highest quality talent pool for short-term work.
           </p>
 
           <p>
             Climate Fellows draws from workonclimate.org’s 1000+ strong
             community. Fellows are professionals who have committed 10+
-            hours/week to working with climate nonprofits and for-profits. 
-          </p>
-
-          <p>Nonprofits can offer volunteer or paid projects. For-profits must offer paid projects by labor law.
+            hours/week to working with climate nonprofits and for-profits.
           </p>
 
           <p>
+            Nonprofits can offer volunteer or paid projects. For-profits must
+            offer paid projects by labor law.
           </p>
+
+          <p></p>
 
           <a class="btn" href="https://airtable.com/shrFJjCxH4sBK6lha"
             >Pitch a project</a
@@ -257,8 +259,8 @@
             </li>
           </ul>
           <p>
-            For nonprofit organizations, our Fellows can work with you for free —
-            startups and other for-profit organizations can work with our
+            For nonprofit organizations, our Fellows can work with you for free
+            — startups and other for-profit organizations can work with our
             Fellows on a paid contract.
           </p>
 
@@ -331,6 +333,18 @@ Not ready to be a CTO, but looking to try part time work in climate and seeing i
             justify-content: center;
           "
         >
+          <div style="grid-column: 1 / -1">
+            <v-chip
+              small
+              v-for="tag in Object.keys(tagCounts).sort()"
+              :input-value="activeTag === tag"
+              filter
+              :key="tag"
+              @click="activeTag = activeTag === tag ? null : tag"
+              style="margin: 3px"
+              >{{ tag }} ({{ tagCounts[tag] }})
+            </v-chip>
+          </div>
           <v-text-field
             label="Search"
             append-icon="mdi-magnify"
@@ -372,7 +386,12 @@ We are two ex-Google AI software engineers with 5 and 8 years at the company. We
               >Niveditha Obla</a
             >, <a href="https://cassandraxia.com">Cassandra Xia</a>,
             <a href="https://www.linkedin.com/in/jeremiah-brewer-595042b2/"
-              >Jeremy Brewer</a>, <a href="https://www.linkedin.com/in/eugenekirpichov/">Eugene Kirpichov</a>, and <a href="https://www.linkedin.com/in/richardikim/">Richard Kim</a>.
+              >Jeremy Brewer</a
+            >,
+            <a href="https://www.linkedin.com/in/eugenekirpichov/"
+              >Eugene Kirpichov</a
+            >, and
+            <a href="https://www.linkedin.com/in/richardikim/">Richard Kim</a>.
           </p>
         </div>
 
@@ -394,11 +413,13 @@ import FellowProfile, { Fellow } from "@/components/FellowProfile.vue";
 @Component({ name: "App", components: { FellowProfile } })
 export default class App extends Vue {
   fellowProfiles: Fellow[] = [];
+  tagCounts: _.Dictionary<number> = {};
+  activeTag: string | null = null;
   searchSubstring = "";
 
   get filteredProfiles(): Fellow[] {
     const query = this.searchSubstring.toLowerCase();
-    return _.filter(this.fellowProfiles, function (fellow: Fellow) {
+    return _.filter(this.fellowProfiles, (fellow: Fellow) => {
       let fields = [
         fellow.name,
         fellow.skillsOffered,
@@ -408,7 +429,9 @@ export default class App extends Vue {
       if (!_.every(fields, (x: any) => x != null)) {
         return false;
       }
-
+      if (this.activeTag != null && !_.includes(fellow.tags, this.activeTag)) {
+        return false;
+      }
       return fields.join(";").toLowerCase().includes(query);
     });
   }
@@ -450,6 +473,7 @@ export default class App extends Vue {
                 calendly: record.get("Calendly"),
                 linkedIn: record.get("LinkedIn"),
                 skillsOffered: record.get("Skills offered"),
+                tags: record.get("Tags") || [],
                 orgsOfInterest: record.get(
                   "Types of organizations you want to help"
                 ),
@@ -474,6 +498,9 @@ export default class App extends Vue {
             tempFellowProfiles,
             (x: Fellow) => x.skillsOffered.length,
             ["asc"]
+          );
+          this.tagCounts = _.countBy(
+            _.flatMap(this.fellowProfiles, (x: Fellow) => x.tags)
           );
         }
       );

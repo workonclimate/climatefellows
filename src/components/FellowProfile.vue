@@ -14,7 +14,9 @@
 
     <div style="font-weight: bold; font-size: 1.2em">{{ fellow.name }}</div>
     <a v-if="fellow.linkedIn" :href="fellow.linkedIn">LinkedIn</a>
-    <span v-if="fellow.calendly"> · <a :href="bookingLink">Request booking</a></span>
+    <span v-if="fellow.calendly">
+      · <a :href="bookingLink">Request booking</a></span
+    >
 
     <div class="faint-label">Available for</div>
     <div>{{ fellow.availability }}</div>
@@ -22,17 +24,23 @@
     <div class="faint-label">Skills offered</div>
     <div style="white-space: pre-line">{{ fellow.skillsOffered }}</div>
 
+    <div class="faint-label">Tags</div>
+    <div class="skill-chips">
+      <v-chip v-for="tag in fellow.tags" :key="tag" x-small>{{ tag }}</v-chip>
+    </div>
+
     <div class="faint-label">Orgs you want to help</div>
     <div>{{ fellow.orgsOfInterest }}</div>
   </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import { Component, Prop, Vue } from "vue-property-decorator";
 
 interface Fellow {
   name: string;
   skillsOffered: string;
+  tags: string[];
   orgsOfInterest: string;
   availability: string;
   calendly: string;

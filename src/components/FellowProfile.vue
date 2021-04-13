@@ -13,8 +13,8 @@
     />
 
     <div style="font-weight: bold; font-size: 1.2em">{{ name }}</div>
-    <a v-if="linkedIn" :href="linkedIn">LinkedIn</a>
-    <span v-if="calendly"> · <a :href="bookingLink">Request booking</a></span>
+    <a v-if="linkedIn" :href="linkedIn" @click="track('linkedin-click')">LinkedIn</a>
+    <span v-if="calendly"> · <a :href="bookingLink" @click="track('booking-click')">Request booking</a></span>
 
     <div class="faint-label">Available for</div>
     <div>{{ availability }}</div>
@@ -49,6 +49,12 @@ export default Vue.extend({
       );
     },
   },
+  methods: {
+    track(eventName){
+      // https://matteo-gabriele.gitbook.io/vue-gtag/
+      this.$gtag.event(eventName);     
+    }
+  }
 });
 </script>
 

@@ -61,6 +61,7 @@
       </section>
 
       <section style="background-color: #fafafa">
+        <!-- Source in Figma https://www.figma.com/file/yqWKX6Ye7vKXIUSDFGPc3D/Climate-Fellows?node-id=623%3A0 -->
         <img src="@/assets/fellows-diagram.svg" style="margin: 0 auto" />
       </section>
 

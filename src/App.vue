@@ -95,6 +95,11 @@
           <a class="btn" href="https://airtable.com/shrFJjCxH4sBK6lha"
             >Pitch a project</a
           >
+          <a class="btn" href="#our-fellows"
+             @click="animatedScrollTo('our-fellows')"
+             target="_self"
+            >Book a quick consult</a
+          >
         </div>
 
         <p class="quote">

@@ -68,7 +68,7 @@ class FellowProfile extends Vue {
     );
   }
 
-  track(eventName: string) {
+  track(eventName: string): void {
     // https://matteo-gabriele.gitbook.io/vue-gtag/
     this.$gtag.event(eventName);
   }

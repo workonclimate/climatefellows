@@ -196,47 +196,6 @@
       <section id="faq" class="text-section" style="background-color: #f6f4f2">
         <h2>FAQ</h2>
         <div></div>
-
-        <div>
-          <div class="faint-label">For individuals</div>
-          <strong>What is the goal of Climate Fellows?</strong>
-          <p>
-            We want to connect incredible talent from the tech, business and
-            engineering world with nonprofit and for-profit climate
-            organizations. These projects aim to help solve climate issues at
-            large or address projects within these organizations. We hope that
-            Climate Fellows use their projects as opportunities to explore how
-            they can directly participate in the climate movement — and we hope
-            it fuels your own initiative to make a long term career transition!
-          </p>
-
-          <strong>What does it mean to be a Climate Fellow?</strong>
-          <p>
-            First and foremost, we’re looking for individuals who are passionate
-            about working towards climate solutions. Our Fellows are
-            professionals who want to use their skills and experience to help
-            non profits and startups succeed and can commit a minimum of 10
-            hours per week. Paid and volunteer opportunities both available.
-          </p>
-
-          <p>
-            Fill in
-            <a href="https://forms.gle/TW93cS48tvi1wnvm9">our form</a>
-            describing your skills and desires, and we will email you as
-            relevant part-time opportunities arise.
-          </p>
-
-          <strong>What else can I do to get involved?</strong>
-          <p>
-            Get started taking action today by finding people and resources with
-            others in the
-            <a href="https://workonclimate.org">Work on Climate</a> community.
-          </p>
-
-          <!-- <a class="btn" href="https://forms.gle/TW93cS48tvi1wnvm9">Apply to be a Fellow</a> -->
-        </div>
-        <!-- end lhs -->
-
         <div>
           <div class="faint-label mobile-top-pad">For organizations</div>
 
@@ -291,6 +250,47 @@
 
           <!-- <a class="btn" href="https://airtable.com/shrFJjCxH4sBK6lha">Apply as an organization</a>
  -->
+        </div>
+
+        <!-- end lhs -->
+
+        <div>
+          <div class="faint-label">For individuals</div>
+          <strong>What is the goal of Climate Fellows?</strong>
+          <p>
+            We want to connect incredible talent from the tech, business and
+            engineering world with nonprofit and for-profit climate
+            organizations. These projects aim to help solve climate issues at
+            large or address projects within these organizations. We hope that
+            Climate Fellows use their projects as opportunities to explore how
+            they can directly participate in the climate movement — and we hope
+            it fuels your own initiative to make a long term career transition!
+          </p>
+
+          <strong>What does it mean to be a Climate Fellow?</strong>
+          <p>
+            First and foremost, we’re looking for individuals who are passionate
+            about working towards climate solutions. Our Fellows are
+            professionals who want to use their skills and experience to help
+            non profits and startups succeed and can commit a minimum of 10
+            hours per week. Paid and volunteer opportunities both available.
+          </p>
+
+          <p>
+            Fill in
+            <a href="https://forms.gle/TW93cS48tvi1wnvm9">our form</a>
+            describing your skills and desires, and we will email you as
+            relevant part-time opportunities arise.
+          </p>
+
+          <strong>What else can I do to get involved?</strong>
+          <p>
+            Get started taking action today by finding people and resources with
+            others in the
+            <a href="https://workonclimate.org">Work on Climate</a> community.
+          </p>
+
+          <!-- <a class="btn" href="https://forms.gle/TW93cS48tvi1wnvm9">Apply to be a Fellow</a> -->
         </div>
         <!-- end rhs -->
       </section>
@@ -623,7 +623,8 @@ section {
 
 .faint-label {
   text-transform: uppercase;
-  font-size: 0.8em;
+  font-size: 1.2em;
+  font-weight: 600;
   color: #212a37;
   margin: 16px 0;
 }

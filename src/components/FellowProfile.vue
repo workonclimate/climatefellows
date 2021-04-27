@@ -26,18 +26,18 @@
       ></span
     >
 
-    <div class="faint-label">Available for</div>
+    <div class="field-label">Available for</div>
     <div>{{ fellow.availability }}</div>
 
-    <div class="faint-label">Skills offered</div>
+    <div class="field-label">Skills offered</div>
     <div style="white-space: pre-line">{{ fellow.skillsOffered }}</div>
 
-    <div class="faint-label">Tags</div>
+    <div class="field-label">Tags</div>
     <div class="skill-chips">
       <v-chip v-for="tag in fellow.tags" :key="tag" x-small>{{ tag }}</v-chip>
     </div>
 
-    <div class="faint-label">Orgs you want to help</div>
+    <div class="field-label">Orgs you want to help</div>
     <div>{{ fellow.orgsOfInterest }}</div>
   </div>
 </template>
@@ -84,8 +84,10 @@ export default FellowProfile;
   margin: 16px 0;
 }
 
-.fellow-profile .faint-label {
-  margin: 8px 0;
+.field-label {
+  text-transform: uppercase;
+  font-size: 0.8em;
   color: #999;
+  margin: 8px 0;
 }
 </style>

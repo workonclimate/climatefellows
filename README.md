@@ -1,24 +1,23 @@
-# climatefellows
+# Climate Fellows
 
 ## Project setup
+
+One-time step: run this when you check out the repository for the first time,
+or when you get dependency errors later on.
+
 ```
-npm install
+$ npm install
 ```
 
-### Compiles and hot-reloads for development
+## Serve the website locally
 ```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
+$ npm run serve
 ```
 
-### Lints and fixes files
+## Push the changes
+
+Push your changes to the main branch, then also deploy to GitHub Pages:
 ```
-npm run lint
+$ ./deploy.sh
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).

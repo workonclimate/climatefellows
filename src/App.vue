@@ -28,6 +28,7 @@
         <a
           class="secret-link"
           href="#our-fellows"
+          target="_self"
           @click="animatedScrollTo('#our-fellows')"
           >Our fellows</a
         >
@@ -38,6 +39,7 @@
         <a
           class="nav-link secret-link"
           href="#faq"
+          target="_self"
           @click="animatedScrollTo('#faq')"
           >FAQ</a
         >

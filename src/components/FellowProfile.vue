@@ -13,9 +13,17 @@
     />
 
     <div style="font-weight: bold; font-size: 1.2em">{{ fellow.name }}</div>
-    <a v-if="fellow.linkedIn" :href="fellow.linkedIn">LinkedIn</a>
+    <a
+      v-if="fellow.linkedIn"
+      :href="fellow.linkedIn"
+      @click="track('linkedin-click')"
+      >LinkedIn</a
+    >
     <span v-if="fellow.calendly">
-      · <a :href="bookingLink">Request booking</a></span
+      ·
+      <a :href="bookingLink" @click="track('booking-click')"
+        >Request booking</a
+      ></span
     >
 
     <div class="faint-label">Available for</div>
@@ -58,6 +66,11 @@ class FellowProfile extends Vue {
       "https://docs.google.com/forms/d/e/1FAIpQLSd-trWGrqTPhTCW5Mslk4G7M2Om2lCnp8DUfX2GpEjylyRQzA/viewform?entry.966322401=" +
       this.fellow.name.replaceAll(" ", "+")
     );
+  }
+
+  track(eventName: string) {
+    // https://matteo-gabriele.gitbook.io/vue-gtag/
+    this.$gtag.event(eventName);
   }
 }
 

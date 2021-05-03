@@ -395,7 +395,7 @@ We are two ex-Google AI software engineers with 5 and 8 years at the company. We
             >, <a href="https://cassandraxia.com">Cassandra Xia</a>,
             <a href="https://www.linkedin.com/in/jeremiah-brewer-595042b2/"
               >Jeremy Brewer</a
-            >,
+            >, <a href="https://www.linkedin.com/in/jonathanhstrauss/">Jonathan Strauss</a>,
             <a href="https://www.linkedin.com/in/eugenekirpichov/"
               >Eugene Kirpichov</a
             >, and

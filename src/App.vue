@@ -504,7 +504,7 @@ export default class App extends Vue {
           // this_.fellowProfiles = _.shuffle(fellowProfiles); //_.orderBy(, ['profileImage'], ['asc']);
           this.fellowProfiles = _.orderBy(
             tempFellowProfiles,
-            (x: Fellow) => x.skillsOffered.length,
+            (x: Fellow) => (x.skillsOffered || "").length,
             ["asc"]
           );
           this.tagCounts = _.countBy(

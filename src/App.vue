@@ -34,7 +34,7 @@
         >
         <!--    <a class="secret-link" href="https://forms.gle/TW93cS48tvi1wnvm9">For individuals</a> -->
         <a class="secret-link" href="https://airtable.com/shrFJjCxH4sBK6lha"
-          >For organizations</a
+          >For nonprofits</a
         >
         <a
           class="nav-link secret-link"
@@ -48,7 +48,7 @@
     <v-main>
       <section class="banner-section" style="background-color: #494971">
         <h2 class="banner-h2">
-          Climate organizations, find professional volunteers and contractors.
+          Climate nonprofits, meet professional volunteers.
         </h2>
       </section>
 
@@ -75,25 +75,20 @@
 
         <div>
           <p>
-            We want to empower all climate organizations to succeed by providing
-            access to the highest quality talent pool for short-term work.
+            We want to empower all climate nonprofits to succeed by providing
+            access to the highest quality talent pool for volunteer work.
           </p>
 
           <p>
-            Climate Fellows draws from workonclimate.org’s 1000+ strong
+            Climate Fellows draws from workonclimate.org’s 2000+ person (and growing!)
             community. Fellows are professionals who have committed 10+
-            hours/week to working with climate nonprofits and for-profits.
-          </p>
-
-          <p>
-            Nonprofits can offer volunteer or paid projects. For-profits must
-            offer paid projects by labor law.
+            hours/week to volunteer with climate nonprofits.
           </p>
 
           <p></p>
 
           <a class="btn" href="https://airtable.com/shrFJjCxH4sBK6lha"
-            >Pitch a project</a
+            >Pitch your nonprofit</a
           >
           <a class="btn" href="#our-fellows"
              @click="animatedScrollTo('our-fellows')"
@@ -162,15 +157,7 @@
 
         <div>
           <p>
-            Are you ready to commit 10+ hours/week to working on climate? Join a
-            like-minded cohort in volunteering at a climate nonprofit, or doing
-            paid contract work with a climate startup.
-          </p>
-
-          <p>
-            Are you looking for a full-time job? Our program allows you to
-            experience what it is like to work at the organization as a
-            contractor before making the leap.
+            Are you ready to commit 10+ hours/week to working on climate? Use your professional skills to make a difference. See what problems  climate nonprofits actually experience, and use your professional skills to make a difference. 
           </p>
 
           <a class="btn" href="https://forms.gle/TW93cS48tvi1wnvm9"
@@ -178,32 +165,13 @@
           >
         </div>
 
-        <div>
-          <div class="faint-label">For individuals</div>
-          <div
-            style="
-              display: grid;
-              grid-template-columns: 100px 200px;
-              align-items: baseline;
-            "
-          >
-            <div class="cohort">Cohort 3</div>
-            <div class="date">Feb 22, 2021</div>
-
-            <div class="cohort">Cohort 4</div>
-            <div class="date">Mar 19, 2021</div>
-
-            <div class="cohort">Cohort 5</div>
-            <div class="date">May 20, 2021</div>
-          </div>
-        </div>
       </section>
 
       <section id="faq" class="text-section" style="background-color: #f6f4f2">
         <h2>FAQ</h2>
         <div></div>
         <div>
-          <div class="faint-label mobile-top-pad">For organizations</div>
+          <div class="faint-label mobile-top-pad">For nonprofits</div>
 
           <strong>Why should I work with Climate Fellows?</strong>
 
@@ -216,20 +184,14 @@
             <li>
               <strong>Deep Engagements:</strong> Work with a Fellow on a long
               term project to address a need at your organization. Fellows
-              commit to work at least 10 hours a week and individual needs for
-              your project can be tailored specifically with your Fellow.
+              commit to volunteer 10+ hours a week and can drive a real project at your organization. 
             </li>
             <li>
-              <strong>Climate Fellows Consults:</strong> one hour consultations
+              <strong>Climate Fellows Consults:</strong> Quick consultations
               from a Fellow with experience in the field you’re looking for,
               which you can book directly with the Fellow of your choice.
             </li>
           </ul>
-          <p>
-            For nonprofit organizations, our Fellows can work with you for free
-            — startups and other for-profit organizations can work with our
-            Fellows on a paid contract.
-          </p>
 
           <strong>What type of backgrounds do Climate Fellows have?</strong>
           <p>
@@ -265,21 +227,14 @@
           <strong>What is the goal of Climate Fellows?</strong>
           <p>
             We want to connect incredible talent from the tech, business and
-            engineering world with nonprofit and for-profit climate
-            organizations. These projects aim to help solve climate issues at
-            large or address projects within these organizations. We hope that
+            engineering world with climate nonprofits. We hope that
             Climate Fellows use their projects as opportunities to explore how
-            they can directly participate in the climate movement — and we hope
-            it fuels your own initiative to make a long term career transition!
+            they can directly participate in the climate movement — and possibly inspire a long term career transition!
           </p>
 
           <strong>What does it mean to be a Climate Fellow?</strong>
           <p>
-            First and foremost, we’re looking for individuals who are passionate
-            about working towards climate solutions. Our Fellows are
-            professionals who want to use their skills and experience to help
-            non profits and startups succeed and can commit a minimum of 10
-            hours per week. Paid and volunteer opportunities both available.
+            Climate Fellows are self-directed individuals looking for impactful projects. You'll have the chance to directly meet many people working at climate nonprofits and pick your own project. You commit to allocating 10+ hr/wk to wokring with your nonprofit. 
           </p>
 
           <p>
@@ -379,8 +334,7 @@ We are two ex-Google AI software engineers with 5 and 8 years at the company. We
 </p>-->
 
           <p>
-            The Climate Fellows and
-            <a href="https://climatecto.com">Climate CTO</a> programs are part
+            The Climate Fellows program is part
             of the
             <a href="https://workonclimate.org">Work on Climate</a> collective
             to get more people doing meaningful work in the climate space.

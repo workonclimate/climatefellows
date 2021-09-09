@@ -33,7 +33,7 @@
           >Our fellows</a
         >
         <!--    <a class="secret-link" href="https://forms.gle/TW93cS48tvi1wnvm9">For individuals</a> -->
-        <a class="secret-link" href="https://airtable.com/shrFJjCxH4sBK6lha"
+        <a class="secret-link" href="https://airtable.com/shraJbVrs5e5renHo"
           >For nonprofits</a
         >
         <a
@@ -87,7 +87,7 @@
 
           <p></p>
 
-          <a class="btn" href="https://airtable.com/shrFJjCxH4sBK6lha"
+          <a class="btn" href="https://airtable.com/shraJbVrs5e5renHo"
             >Pitch your nonprofit</a
           >
           <a class="btn" href="#our-fellows"
@@ -211,12 +211,12 @@
           <p>
             If you’re looking for a specific background, reach out to us
             directly by filling out
-            <a href="https://airtable.com/shrFJjCxH4sBK6lha">this form</a>! Our
+            <a href="https://airtable.com/shraJbVrs5e5renHo">this form</a>! Our
             program is constantly growing and we are welcoming new Fellows with
             unique backgrounds on a regular basis
           </p>
 
-          <!-- <a class="btn" href="https://airtable.com/shrFJjCxH4sBK6lha">Apply as an organization</a>
+          <!-- <a class="btn" href="https://airtable.com/shraJbVrs5e5renHo">Apply as an organization</a>
  -->
         </div>
 

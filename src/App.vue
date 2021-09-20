@@ -32,7 +32,7 @@
           @click="animatedScrollTo('#our-fellows')"
           >Our fellows</a
         >
-        <!--    <a class="secret-link" href="https://forms.gle/TW93cS48tvi1wnvm9">For individuals</a> -->
+        <!--    <a class="secret-link" href="https://airtable.com/shrouyFr4zINiI1i5">For individuals</a> -->
         <a class="secret-link" href="https://airtable.com/shraJbVrs5e5renHo"
           >For nonprofits</a
         >
@@ -160,7 +160,7 @@
             Are you ready to commit 10+ hours/week to working on climate? Use your professional skills to make a difference. See what problems  climate nonprofits actually experience, and use your professional skills to make a difference. 
           </p>
 
-          <a class="btn" href="https://forms.gle/TW93cS48tvi1wnvm9"
+          <a class="btn" href="https://airtable.com/shrouyFr4zINiI1i5"
             >Apply to be a Fellow</a
           >
         </div>
@@ -239,7 +239,7 @@
 
           <p>
             Fill in
-            <a href="https://forms.gle/TW93cS48tvi1wnvm9">our form</a>
+            <a href="https://airtable.com/shrouyFr4zINiI1i5">our form</a>
             describing your skills and desires, and we will email you as
             relevant part-time opportunities arise.
           </p>
@@ -251,7 +251,7 @@
             <a href="https://workonclimate.org">Work on Climate</a> community.
           </p>
 
-          <!-- <a class="btn" href="https://forms.gle/TW93cS48tvi1wnvm9">Apply to be a Fellow</a> -->
+          <!-- <a class="btn" href="https://airtable.com/shrouyFr4zINiI1i5">Apply to be a Fellow</a> -->
         </div>
         <!-- end rhs -->
       </section>

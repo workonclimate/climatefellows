@@ -410,10 +410,12 @@ export default class App extends Vue {
     const apiKey = "keyalRxirLVmrHvI7"; // cssndry
     var base = new Airtable({ apiKey: apiKey }).base("appRUOqDj0CONvWr3");
 
+  // https://api.airtable.com/v0/appRUOqDj0CONvWr3/Fellow%20Profiles?view=Active+Quick+Consults
+
     const tempFellowProfiles: Fellow[] = [];
     base("Fellow Profiles")
       .select({
-        view: "Grid view",
+        view: "Active Quick Consults",
       })
       .eachPage(
         (records, fetchNextPage) => {
@@ -429,7 +431,7 @@ export default class App extends Vue {
               helpOffered = helpOffered.join(", ");
             }
 
-            if (record && record.get("Name")) {
+            if (record && record.get("Name") && headshot) {
               tempFellowProfiles.push({
                 name: record.get("Name"),
                 calendly: record.get("Calendly"),

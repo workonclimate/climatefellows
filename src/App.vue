@@ -52,12 +52,8 @@
         </h2>
       </section>
 
-      <section class="company-section">
+      <section style="padding:0">
         <img src="@/assets/landscape-wide.png" class="image-h2" />
-
-        <h2 class="block-h2">
-          <span>You're working for the planet, and we want to help.</span>
-        </h2>
       </section>
 
       <section style="background-color: #fafafa">
